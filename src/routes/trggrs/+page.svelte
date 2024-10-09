@@ -43,7 +43,7 @@
         {#if trggrs.length > 0}
             <ul>
                 {#each trggrs as trggr}
-                    <li><a href={`/trggrs/${trggr.id}`}>{trggr.id}</a>: {trggr.description}</li>
+                    <li><a href={`/trggr/${trggr.id}`}>{trggr.id}</a>: {trggr.description}</li>
                 {/each}
             </ul>
         {:else}

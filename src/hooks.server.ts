@@ -1,14 +1,10 @@
 import { verifyJwt } from '$lib/utils';
 import type { Handle } from '@sveltejs/kit';
-import { session } from '$lib/stores/session';
 
 export const handle: Handle = async ({ event, resolve }) => {    
     const token =
         event.cookies.get('token') ||
-        event.request.headers.get('Authorization')?.split(' ')[1] ||
-        session.token;
-
-    console.log('token', token);
+        event.request.headers.get('Authorization')?.split(' ')[1];
 
     if (token) {
         const decodedToken = await verifyJwt(token)

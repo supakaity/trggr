@@ -36,7 +36,7 @@
 
 <article>
 	<section class="page">
-        <h2>Trggr</h2>
+        <h2>This content may be sensitive</h2>
 		{#if loaded && trggr}
 			<h3 title={classified.description}>
                 Classification: {classified.label}
@@ -95,6 +95,12 @@
                     <strong>Replaced at:</strong> {new Date(trggr.replacedAt ?? '').toLocaleString()}<br/>
                 {/if}
             </p>
+
+            <strong>Markdown:</strong>
+            <pre>[tw: {trggr.classification}](https://trggr.link/trggr/{trggr.id})</pre>
+            <strong>HTML:</strong>
+            <pre>&lt;a href=&quot;https://trggr.link/trggr/{trggr.id}&quot;&gt;tw: {trggr.classification}&lt;/a&gt;</pre>
+
 		{:else if error}
 			<p>Error loading trigger</p>
 		{:else}
