@@ -1,0 +1,105 @@
+.page {
+	font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 48px 20px;
+	margin: 0 auto;
+	max-width: 600px;
+	color: #333;
+}
+
+.page h2 {
+	font-weight: 700;
+	font-size: 32px;
+	line-height: 1;
+	margin: 0 0 4px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.page p {
+	margin: 1em 0;
+}
+
+.page a {
+	text-decoration: none;
+	color: #1ea7fd;
+}
+
+.page ul {
+	padding-left: 30px;
+	margin: 1em 0;
+}
+
+.page li {
+	margin-bottom: 8px;
+}
+
+.page .tip {
+	display: inline-block;
+	border-radius: 1em;
+	font-size: 11px;
+	line-height: 12px;
+	font-weight: 700;
+	background: #e7fdd8;
+	color: #66bf3c;
+	padding: 4px 12px;
+	margin-right: 10px;
+	vertical-align: top;
+}
+
+.page .tip-wrapper {
+	font-size: 13px;
+	line-height: 20px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.page .tip-wrapper svg {
+	display: inline-block;
+	height: 12px;
+	width: 12px;
+	margin-right: 4px;
+	vertical-align: top;
+	margin-top: 3px;
+}
+
+.page .tip-wrapper svg path {
+	fill: #1ea7fd;
+}
+
+.toast-container {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	z-index: 1000;
+}
+
+.toast {
+	padding: 12px 20px;
+	border-radius: 4px;
+	color: white;
+	font-size: 14px;
+	max-width: 300px;
+}
+
+.info {
+	background-color: #3498db;
+}
+
+.success {
+	background-color: #2ecc71;
+}
+
+.error {
+	background-color: #e74c3c;
+}
+
+.quote {
+	display: block;
+    background-color: #f9f9f9;
+    border-left: 4px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    font-style: italic;
+}

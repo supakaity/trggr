@@ -1,0 +1,132 @@
+.storybook-header {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.storybook-header svg {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.storybook-header h1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  margin: 6px 0 6px 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.storybook-header button + button {
+  margin-left: 10px;
+}
+
+.storybook-header .welcome {
+  color: #333;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+@keyframes brightness-animation {
+  0% {
+    brightness: 1.1;
+  }
+
+  50% {
+    brightness: 0.5;
+  }
+
+  100% {
+    brightness: 1.1;
+  }
+}
+
+@keyframes hue-animation {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes rotate-animation {
+  0% {
+    rotate: 30 1 1 0deg;
+  }
+
+  25% {
+    rotate: 30 1 1 30deg;
+  }
+
+  75% {
+    rotate: 1 30 1 -15deg;
+  }
+
+  100% {
+    rotate: 1 1 30 0deg;
+  }
+}
+
+#trggr {
+  cursor: pointer;
+}
+
+#trggr > path {
+  animation:
+    hue-animation 60s infinite,
+    brightness-animation 10s infinite,
+    rotate-animation 0.8s infinite;
+  stroke: #00000060;
+  stroke-width: 2px;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 10;
+  paint-order: stroke fill;
+  transform-origin: 50% 50%;
+}
+
+#trggr #trggr-1 {
+  fill: hsl(328, 100.0%, 52%);
+}
+
+#trggr #trggr-2 {
+  fill: hsl(8, 100.0%, 52%);
+}
+
+#trggr #trggr-3 {
+  fill: hsl(41, 100.0%, 52%);
+}
+
+#trggr #trggr-4 {
+  fill: hsl(119, 100.0%, 52%);
+}
+
+#trggr #trggr-5 {
+  fill: hsl(186.0, 100.0%, 52%);
+}
+
+#trggr #trggr-6 {
+  fill: hsl(250.0, 100.0%, 52%);
+}
+
+#trggr #trggr-7 {
+  fill: hsl(314.0, 100.0%, 52%);
+}
+
+#trggr #trggr-8 {
+  fill: hsl(22.0, 100.0%, 52%);
+}
+
+#trggr #trggr-9 {
+  fill: hsl(50.0, 100.0%, 52%);
+}
+
+#trggr #trggr-10 {
+  fill: hsl(145.0, 100.0%, 52%);
+}
