@@ -1,5 +1,5 @@
 import { classificationsList, contentTypesList, reportTypeList } from '../../types';
-import { index, pgSchema, text, timestamp } from 'drizzle-orm/pg-core';
+import { boolean, index, pgSchema, text, timestamp } from 'drizzle-orm/pg-core';
 
 const schema = pgSchema('trggr');
 
@@ -41,6 +41,7 @@ export const trggrs = schema.table('trggrs', {
 	description: text('description').notNull(),
 	content: text('content').notNull(),
 	type: contentTypes('type').notNull(),
+	encrypted: boolean('encrypted').notNull().default(false),
 	replacement: text('replacement'),
 	replacementOf: text('replacement_of'),
 }, (table) => ({

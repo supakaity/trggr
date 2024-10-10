@@ -11,6 +11,7 @@ type Trggr = {
     description: string;
     content: string;
     type: string;
+    encrypted: boolean;
     replacement: string | null;
     replacementOf: string | null;
 }

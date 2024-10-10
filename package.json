@@ -14,7 +14,9 @@
 		"build-storybook": "storybook build",
 		"db:drop": "drizzle-kit drop --out=./drizzle",
 		"db:migrate": "drizzle-kit migrate",
-		"db:generate": "drizzle-kit generate"
+		"db:generate": "drizzle-kit generate",
+		"test:unit": "vitest",
+		"test": "npm run test:unit -- --run"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^1.9.0",
@@ -49,10 +51,13 @@
 		"tailwindcss": "^3.4.9",
 		"typescript": "^5.0.0",
 		"typescript-eslint": "^8.0.0",
-		"vite": "^5.0.3"
+		"vite": "^5.0.3",
+		"vitest": "^2.0.4"
 	},
 	"type": "module",
 	"dependencies": {
+		"@noble/ciphers": "^1.0.0",
+		"@noble/ed25519": "^2.1.0",
 		"bcrypt": "^5.1.1",
 		"drizzle-orm": "^0.31.2",
 		"jose": "^5.9.3",

@@ -32,8 +32,8 @@
   <div class="storybook-header">
     <div>
       <svg
-        width="86px"
-        height="32px"
+        width="112px"
+        height="42px"
         viewBox="0 0 400 150"
         version="1.1"
         xmlns:xlink="http://www.w3.org/1999/xlink"

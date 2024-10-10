@@ -33,15 +33,19 @@
 
 @keyframes brightness-animation {
   0% {
-    brightness: 1.1;
+    filter: brightness(1.2)
   }
 
-  50% {
-    brightness: 0.5;
+  10% {
+    filter: brightness(0.8)
+  }
+
+  40% {
+    filter: brightness(1.7)
   }
 
   100% {
-    brightness: 1.1;
+    filter: brightness(1.2)
   }
 }
 
@@ -55,7 +59,7 @@
   }
 }
 
-@keyframes rotate-animation {
+@keyframes heartbeat-animation {
   0% {
     rotate: 30 1 1 0deg;
   }
@@ -75,19 +79,21 @@
 
 #trggr {
   cursor: pointer;
+  filter: drop-shadow( 3px 7px 8px rgba(0, 0, 0, .5));
+  stroke: #000;
+  stroke-width: 4px;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 10;
+  paint-order: stroke fill;
+  animation:
+    brightness-animation 9s infinite;
 }
 
 #trggr > path {
   animation:
     hue-animation 60s infinite,
-    brightness-animation 10s infinite,
-    rotate-animation 0.8s infinite;
-  stroke: #00000060;
-  stroke-width: 2px;
-  stroke-linecap: square;
-  stroke-linejoin: miter;
-  stroke-miterlimit: 10;
-  paint-order: stroke fill;
+    heartbeat-animation 0.8s infinite;
   transform-origin: 50% 50%;
 }
 

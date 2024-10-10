@@ -1,0 +1,1 @@
+ALTER TABLE "trggr"."trggrs" ADD COLUMN "encrypted" boolean DEFAULT false NOT NULL;

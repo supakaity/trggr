@@ -59,7 +59,7 @@
 		const response = await fetch('/api/login', {
 			method: 'POST',
 			body: JSON.stringify({
-				email: event.detail.email,
+				login: event.detail.login,
 				password: event.detail.password
 			}),
 		});
@@ -78,7 +78,7 @@
 			session.setSession(data.token, {
 				userId: data.userId,
 				username: data.username,
-				email: event.detail.email
+				email: data.email
 			});
 		} else {
 			console.log('Failed login response:', response);
@@ -112,7 +112,7 @@
 			session.setSession(data.token, {
 				userId: data.userId,
 				username: data.username,
-				email: event.detail.email
+				email: data.email
 			});
 		} else {
 			console.log('Failed create account response:', response);
@@ -160,37 +160,24 @@
 
 <Toast data={toastData} />
 
-<style>
-.modal-backdrop {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	z-index: 100;
-}
-
-.modal {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: white;
-	padding: 2rem;
-	border-radius: 0.5rem;
-	z-index: 101;
-	max-width: 90%;
-	width: 400px;
-}
-
-.close-button {
-	position: absolute;
-	top: 0.5rem;
-	right: 1rem;
-	font-size: 1.5rem;
-	background: none;
-	border: none;
-	cursor: pointer;
-}
-</style>
+<footer>
+	<p>
+		Brought to you by
+		<a href="https://blahaj.zone">
+			<img class="icon" src="/shonky-solid.svg" alt="Shonky" />
+			Blåhaj Zone
+		</a>
+		<span>|</span>
+		Source at
+		<a href="https://github.com/supakaity/trggr">
+			<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+			GitHub
+		</a>
+		<span>|</span>
+		Support on
+		<a href="https://matrix.to/#/@trggr:chat.blahaj.zone">
+			<svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-matrix"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 3h-1v18h1" /><path d="M20 21h1v-18h-1" /><path d="M7 9v6" /><path d="M12 15v-3.5a2.5 2.5 0 1 0 -5 0v.5" /><path d="M17 15v-3.5a2.5 2.5 0 1 0 -5 0v.5" /></svg>
+			Matrix
+		</a>
+	</p>
+</footer>

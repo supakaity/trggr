@@ -16,6 +16,11 @@ Thumbs.db
 !.env.example
 !.env.test
 
+# Editor
+.idea
+.vscode
+.cursorrules
+
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*

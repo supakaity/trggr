@@ -12,6 +12,7 @@ interface AddData {
     description: string;
     content: string;
     type: string;
+    encrypted: boolean;
     replacementOf: string | null;
 }
 
@@ -38,6 +39,7 @@ export const PUT: RequestHandler = async ({ request, locals }) => {
             description,
             content,
             type,
+            encrypted,
             replacementOf
         }: AddData = await request.json();
 
@@ -79,6 +81,7 @@ export const PUT: RequestHandler = async ({ request, locals }) => {
             description: description,
             content: content,
             type: type,
+            encrypted: encrypted,
             replacementOf: replacementOf ?? null,
         }).returning({ id: trggrs.id });
 
@@ -218,6 +221,12 @@ export const POST: RequestHandler = async ({ request }) => {
         .limit(20);
 
     return json({
-        trggrs: res
+        trggrs: res.map(trggr => ({
+            id: trggr.id,
+            classification: trggr.classification,
+            warning: trggr.warning,
+            description: trggr.description,
+            encrypted: trggr.encrypted,
+        }))
     }, { status: 200 });
 }
