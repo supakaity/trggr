@@ -47,6 +47,7 @@
 
 	$: urlKey = getKeyFromUrl(key);
 	$: fragment = urlKey && content ? `#${urlKey}` : '';
+	$: stringContent = typeof content === 'string' ? content : JSON.stringify(content);
 </script>
 
 <article>
@@ -124,30 +125,32 @@
 									>
 									Incorrect key, unable to decrypt.
 								</span>
+							{:else if !content}
+								<span class="text-lg">No content</span>
 							{:else if trggr.type === 'text'}
 								<strong>Text:</strong><br />
 								<span class="quote">
-									{typeof content === 'string' ? content : JSON.stringify(content)}
+									{stringContent}
 								</span>
 							{:else if trggr.type === 'image'}
-								<strong>Image:</strong><br />
-								<img src={trggr.content} alt="Content" />
+								<strong>Image:</strong> <a href={stringContent} target="_blank" rel="nofollow noopener noreferrer">{content}</a><br />
+								<img src={stringContent} alt="Content" />
 							{:else if trggr.type === 'video'}
-								<strong>Video:</strong><br />
-								<video src={trggr.content} controls>
+								<strong>Video:</strong> <a href={stringContent} target="_blank" rel="nofollow noopener noreferrer">{content}</a><br />
+								<video src={stringContent} controls>
 									<track kind="captions" src="" label="English" />
 								</video>
 							{:else if trggr.type === 'audio'}
-								<strong>Audio:</strong><br />
-								<audio src={trggr.content} controls>
+								<strong>Audio:</strong> <a href={stringContent} target="_blank" rel="nofollow noopener noreferrer">{content}</a><br />
+								<audio src={stringContent} controls>
 									<track kind="captions" src="" label="English" />
 								</audio>
 							{:else if trggr.type === 'link'}
 								<strong>Link:</strong><br />
-								<a href={trggr.content} target="_blank" rel="nofollow noopener noreferrer">Link</a>
+								<a href={stringContent} target="_blank" rel="nofollow noopener noreferrer">{stringContent}</a>
 							{:else}
 								<strong>Content ({trggr.type}):</strong><br />
-								{trggr.content}
+								{stringContent}
 							{/if}
 						{:else}
 							<span class="text-lg">
